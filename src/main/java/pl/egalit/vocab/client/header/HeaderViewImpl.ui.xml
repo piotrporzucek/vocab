@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    ui:baseMessagesInterface="pl.egalit.vocab.client.core.resources.VocabConstants"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	
+	<ui:with field='res' type='pl.egalit.vocab.client.core.resources.MyRes'/>
+	<ui:with field='texts' type='pl.egalit.vocab.client.core.resources.VocabConstants' />
+
+	<g:HorizontalPanel width="100%" horizontalAlignment="ALIGN_RIGHT"
+		styleName="{res.css.panelHeader}">
+		<g:HorizontalPanel spacing="5">
+			<g:Label ui:field="loginName" />
+			<g:Anchor ui:field="settings" styleName="{res.css.link}" text="{texts.settings}">
+				
+			</g:Anchor>
+			<g:Anchor ui:field="logout" styleName="{res.css.link}" text="{texts.logout}">
+				
+			</g:Anchor>
+		</g:HorizontalPanel>
+	</g:HorizontalPanel>
+
+</ui:UiBinder> 

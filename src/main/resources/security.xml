@@ -1,0 +1,68 @@
+<beans:beans xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<context:component-scan base-package="pl.egalit.vocab.server.security">
+	</context:component-scan>
+
+	<http auto-config="true" create-session="always" entry-point-ref="myEntryPoint" access-decision-manager-ref="accessDecisionManager"
+	    >
+		<intercept-url pattern="/gwtRequest/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/index.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/admin/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<logout logout-success-url="/" logout-url="/logout" />
+
+	</http>
+
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="vocabDaoAuthenticationProvider" />
+	</authentication-manager>
+
+	<beans:bean id="vocabDaoAuthenticationProvider"
+		class="pl.egalit.vocab.server.security.VocabDaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="vocabUserDetailsService" />
+	</beans:bean>
+
+	<beans:bean id="myEntryPoint"
+		class="pl.egalit.vocab.server.security.VocabAuthenticationEntryPoint"></beans:bean>
+	<beans:bean id="vocabUserDetailsService"
+		class="pl.egalit.vocab.server.security.VocabUserDetailsService">
+	</beans:bean>
+
+	<beans:bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<beans:property name="decisionVoters">
+			<beans:list>
+				<beans:ref bean="roleVoter" />
+				<beans:ref bean="authenticatedVoter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+
+	<beans:bean id="authenticatedVoter"
+		class="org.springframework.security.access.vote.AuthenticatedVoter" />
+
+	<beans:bean id="roleVoter"
+		class="org.springframework.security.access.vote.RoleHierarchyVoter">
+		<beans:constructor-arg ref="roleHierarchy" />
+	</beans:bean>
+	<beans:bean id="roleHierarchy"
+		class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
+		<beans:property name="hierarchy">
+			<beans:value>
+				ROLE_ADMIN > ROLE_USER
+			</beans:value>
+		</beans:property>
+	</beans:bean>
+
+	<global-method-security secured-annotations="enabled" access-decision-manager-ref="accessDecisionManager" />
+
+</beans:beans>

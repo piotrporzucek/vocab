@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<groupId>pl.egalit.vocab</groupId>
+	<artifactId>vokabes</artifactId>
+
+	<properties>
+		<appengine.app.version>1</appengine.app.version>
+		<gwt.version>2.5.1</gwt.version>
+		<gae.version>1.8.0</gae.version>
+		<appengine.target.version>1.8.0</appengine.target.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.security.version>3.1.3.RELEASE</spring.security.version>
+		<spring.version>3.1.3.RELEASE</spring.version>
+		<webappDirectory>
+			${project.build.directory}/${project.build.finalName}
+		</webappDirectory>
+	</properties>
+
+	<dependencies>
+		<!-- Compile/runtime dependencies -->
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${appengine.target.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-testing</artifactId>
+			<version>${appengine.target.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-stubs</artifactId>
+			<version>${appengine.target.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-aop </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>cglib </groupId>
+			<artifactId>cglib </artifactId>
+			<version>2.2 </version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj </groupId>
+			<artifactId>aspectjrt </artifactId>
+			<version>1.6.11 </version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj </groupId>
+			<artifactId>aspectjweaver </artifactId>
+			<version>1.6.11 </version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt.inject </groupId>
+			<artifactId>gin </artifactId>
+			<version>2.0.0 </version>
+			<classifier />
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.web.bindery </groupId>
+			<artifactId>requestfactory-server </artifactId>
+			<version>2.5.0</version>
+		</dependency><!-- see sample projects for correct placement -->
+		<dependency>
+			<groupId>com.google.web.bindery </groupId>
+			<artifactId>requestfactory-apt </artifactId>
+			<version>2.5.0</version>
+		</dependency> <!-- Google App Engine meta-package -->
+
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-core </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-context </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-tx </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-web </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework </groupId>
+			<artifactId>spring-webmvc </artifactId>
+			<version>${spring.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate </groupId>
+			<artifactId>hibernate-validator-annotation-processor </artifactId>
+			<version>4.1.0.Final </version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+			<version>4.0b1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.android.gcm </groupId>
+			<artifactId>gcm-server</artifactId>
+			<version>1.0.2 </version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction </groupId>
+			<artifactId>jta </artifactId>
+			<version>1.1 </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security </groupId>
+			<artifactId>spring-security-core </artifactId>
+			<version>${spring.security.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security </groupId>
+			<artifactId>spring-security-web </artifactId>
+			<version>${spring.security.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson </groupId>
+			<artifactId>jackson-mapper-asl </artifactId>
+			<version>1.9.11 </version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava </groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-gwt</artifactId>
+			<version>14.0.1 </version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security </groupId>
+			<artifactId>spring-security-config </artifactId>
+			<version>${spring.security.version} </version>
+		</dependency><!-- GWT dependencies -->
+		<dependency>
+			<groupId>com.google.gwt </groupId>
+			<artifactId>gwt-servlet </artifactId>
+			<version>${gwt.version} </version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt </groupId>
+			<artifactId>gwt-user </artifactId>
+			<version>${gwt.version} </version>
+			<scope>provided </scope>
+		</dependency><!-- J2EE Servlet API. We need it to compile IndexServlet 
+			class. You can probably remove it, if you don't explicitly use Servlets -->
+
+		<dependency>
+			<groupId>org.slf4j </groupId>
+			<artifactId>slf4j-api </artifactId>
+			<version>1.6.1 </version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j </groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1 </version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback </groupId>
+			<artifactId>logback-classic </artifactId>
+			<version>0.9.24 </version>
+		</dependency><!-- Test scope -->
+		<dependency>
+			<artifactId>geronimo-jpa_3.0_spec</artifactId>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>xalan </groupId>
+			<artifactId>xalan </artifactId>
+			<version>2.7.1 </version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>shared</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId> org.codehaus.mojo </groupId>
+				<artifactId> gwt-maven-plugin </artifactId>
+				<version>2.5.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<!-- configuration> <configuration> <runTarget>index.html</runTarget> 
+					<hostedWebapp>${webappDirectory}</hostedWebapp> <appEngineVersion>${gae.version}</appEngineVersion> 
+					<server> com.google.appengine.tools.development.gwt.AppEngineLauncher </server> 
+					<copyWebApp>true</copyWebApp> <appEngineHome>${gae.home}</appEngineHome> 
+					</configuration> </configuration -->
+			</plugin><!-- The actual maven-gae-plugin. Type "mvn gae:run" to run project, 
+				"mvn gae:deploy" to upload to GAE. -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>shared</source>
+								<source>src/main/resources</source>
+							</sources>
+							
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<version>2.5.1</version>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<fork>true</fork>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<!-- the exploded goal gets executed during compile phase -->
+						<phase>compile</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- the exploded war structure ends up in target/${webappDirectory} -->
+					<webappDirectory>${webappDirectory}</webappDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.google.appengine</groupId>
+				<artifactId>appengine-maven-plugin</artifactId>
+				<version>${appengine.target.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>net.kindleit</groupId>
+				<artifactId>maven-gae-plugin</artifactId>
+				<version>0.9.6</version>
+				<configuration>
+					<unpackVersion>${gae.version}</unpackVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-war-plugin</artifactId>
+										<versionRange>2.1.1</versionRange>
+										<goals>
+											<goal>exploded</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+	<repositories>
+		<repository>
+			<id>objectify-appengine </id>
+			<url>http://maven.objectify-appengine.googlecode.com/git/ </url>
+		</repository>
+		<repository>
+			<id>gcm-server-repository </id>
+			<url>https://raw.github.com/slorber/gcm-server-repository/master/releases </url>
+		</repository>
+	</repositories>
+
+</project>

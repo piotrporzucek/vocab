@@ -1,0 +1,97 @@
+@sprite .imgClassDelete {
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+	border: 0px;
+	gwt-image: 'delete'
+}
+
+@sprite .imgClassModify {
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+	border: 0px;
+	gwt-image: 'modify'
+}
+
+.link {
+	cursor: pointer;
+}
+
+.panelHeader {
+	text-align: right;
+}
+
+.listcourses {
+	cursor: pointer;
+}
+
+.cellTable {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+
+.buttons {
+	clear: both;
+	maring-top: 30px;
+	text-align: right;
+}
+
+.button {
+	margin-left: 30px;
+	width: 75px;
+}
+
+.sendbutton {
+	margin-bottom: 25px;
+	width: 150px;
+}
+
+.confirmationPanel {
+	margin-left: 10px;
+	margin-top: 20px;
+	font: 20px bold verdana, sans-serif;
+}
+
+.restartSending {
+	cursor: pointer;
+}
+
+.backtoapp {
+	width: 100%;
+	margin-top: 10px;	
+}
+
+.menu {
+	width: 100%;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 1em !important;
+	font-family: Verdana;
+}
+
+.menu ul {
+	list-style-type: none;
+}
+.table {
+	margin-bottom: 20px;
+}
+.header {
+	margin-bottom: 10px;
+	font: 20px bold Verdana,sans-serif;
+}
+.header2 {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font: 16px bold Verdana,sans-serif;
+}
+.errorMessageStyle {
+	color: red;
+}
+.saveButton {
+	margin-bottom: 30px;
+	width: 75px;
+}

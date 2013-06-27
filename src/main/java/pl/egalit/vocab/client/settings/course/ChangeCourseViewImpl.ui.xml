@@ -1,0 +1,91 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:my="urn:import:pl.egalit.vocab.client.core.widget" xmlns:dp="urn:import:com.google.gwt.user.datepicker.client"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:with field='images' type='pl.egalit.vocab.client.core.resources.Images' />
+	<ui:with field='res' type='pl.egalit.vocab.client.core.resources.MyRes' />
+	<ui:with field='texts' type='pl.egalit.vocab.client.core.resources.VocabConstants' />
+	
+	<g:VerticalPanel width="98%">
+		<g:VerticalPanel horizontalAlignment="ALIGN_RIGHT"
+			styleName='{res.css.backtoapp}'>
+			<g:Hyperlink targetHistoryToken="StartPlace">{texts.backToMain}</g:Hyperlink>
+		</g:VerticalPanel>		
+			<g:VerticalPanel horizontalAlignment="ALIGN_LEFT"
+				styleName='{res.css.menu}'>
+				<g:Label ui:field="generalMessage" visible="false"></g:Label>
+				
+				<g:Label styleName="{res.css.header}" text="{texts.addLector}"></g:Label>
+
+				<g:Label styleName="{res.css.header2}" text="{texts.accountData}"></g:Label>
+
+				<g:Grid  styleName='{res.css.table}'>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.courseName} *"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<g:TextBox ui:field="name"></g:TextBox>
+						</g:customCell>
+						<g:customCell styleName="{res.css.errorMessageStyle}">
+							<g:Label ui:field="nameMessage" visible="false"></g:Label>
+						</g:customCell>
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.active}"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<g:CheckBox ui:field="active"></g:CheckBox>
+						</g:customCell>
+
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.startCourse} *"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<dp:DateBox ui:field="startDate"></dp:DateBox>
+						</g:customCell>
+						<g:customCell styleName="{res.css.errorMessageStyle}">
+							<g:Label ui:field="startDateMessage" visible="false"></g:Label>
+						</g:customCell>
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.endCourse} *"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<dp:DateBox ui:field="endDate"></dp:DateBox>
+						</g:customCell>
+						<g:customCell styleName="{res.css.errorMessageStyle}">
+							<g:Label ui:field="endDateMessage" visible="false"></g:Label>
+						</g:customCell>
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.coursePassword} *"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<g:TextBox ui:field="password"></g:TextBox>
+						</g:customCell>
+						<g:customCell styleName="{res.css.errorMessageStyle}">
+							<g:Label ui:field="passwordMessage" visible="false"></g:Label>
+						</g:customCell>
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.description}"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<g:TextArea ui:field="description"></g:TextArea>
+						</g:customCell>
+					</g:row>
+
+				</g:Grid>
+				<g:Button styleName="{res.css.saveButton}" text="{texts.save}" ui:field="save"></g:Button>
+				
+				<g:Hyperlink targetHistoryToken="SettingsPlace:settings" text="{texts.backToSettings}"></g:Hyperlink>
+			</g:VerticalPanel>
+		</g:VerticalPanel>
+</ui:UiBinder> 

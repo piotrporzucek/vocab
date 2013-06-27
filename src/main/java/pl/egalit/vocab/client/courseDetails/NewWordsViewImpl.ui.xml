@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="default" xmlns:my='urn:import:pl.egalit.vocab.client.listCourses'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:w="urn:import:com.google.gwt.widget.client">
+	<ui:with field='res' type='pl.egalit.vocab.client.core.resources.MyRes' />
+	<ui:with field='texts' type='pl.egalit.vocab.client.core.resources.VocabConstants' />
+	<g:VerticalPanel width="98%" height="100%">
+
+		<g:VerticalPanel width="100%" ui:field='formPanel'>
+			<c:CellTable addStyleNames='{res.css.cellTable}' pageSize='15'
+				ui:field='cellTable'>
+			</c:CellTable>
+			<g:VerticalPanel horizontalAlignment="ALIGN_RIGHT"
+				width="100%">
+				<g:HorizontalPanel addStyleNames='{res.css.buttons}'>
+					<g:Button ui:field="removeButton" enabled="false"
+						addStyleNames='{res.css.button}' text="{texts.delete}">
+					    
+					</g:Button>
+					<g:Button ui:field="addButton" text="{texts.add}" addStyleNames='{res.css.button}'>
+					    
+					</g:Button>
+				</g:HorizontalPanel>
+				<g:HorizontalPanel horizontalAlignment="ALIGN_CENTER"
+					width="100%">
+					<g:Button text="{texts.send}" ui:field="sendButton" enabled="false"
+						addStyleNames='{res.css.sendbutton}'>					    					    
+					</g:Button>
+				</g:HorizontalPanel>
+
+			</g:VerticalPanel>
+
+		</g:VerticalPanel>
+		<g:HTMLPanel ui:field='confirmationPanel' styleName="{res.css.confirmationPanel}"
+			visible="false">
+			<g:Label text="{texts.confirmationSent}"></g:Label>
+			<g:Anchor ui:field="restartSending" text="{texts.restartSending}" styleName="{res.css.restartSending}">
+				
+			</g:Anchor>
+		</g:HTMLPanel>
+		<g:HTMLPanel width="75%" ui:field='errorPanel' visible="false">
+			
+			<g:Label text="{texts.errorMessage}"></g:Label>
+		</g:HTMLPanel>
+
+	</g:VerticalPanel>
+
+</ui:UiBinder>

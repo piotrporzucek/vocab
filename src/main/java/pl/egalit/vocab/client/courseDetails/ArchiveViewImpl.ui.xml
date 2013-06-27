@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	ui:generateFormat='com.google.gwt.i18n.rebind.format.PropertiesFormat'
+	ui:generateKeys="com.google.gwt.i18n.rebind.keygen.MD5KeyGenerator"
+	ui:generateLocales="default" xmlns:my='urn:import:pl.egalit.vocab.client.listCourses'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:c="urn:import:com.google.gwt.user.cellview.client"
+	xmlns:w="urn:import:com.google.gwt.widget.client">
+	<ui:style>
+		.archivePanel {
+			margin-top: 20px;
+			text-align: center;
+			margin-left: 10px;			
+		}
+	</ui:style>
+	
+	<g:VerticalPanel width="98%" height="100%" addStyleNames='{style.archivePanel}' ui:field="mainPanel" >
+		
+	</g:VerticalPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 0.0.999//EN"
+ "http://google-web-toolkit.googlecode.com/svn/tags/0.0.999/distro-source/core/src/gwt-module.dtd">
+<module rename-to='vocab'>
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name="com.google.common.collect.Collect" />
+	<inherits name="com.google.common.base.Base" />
+	<!-- You can change the theme of your GWT application by -->
+	<!-- uncommenting any one of the following lines. -->
+	<inherits name='com.google.gwt.user.theme.standard.Standard' />
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+
+	<!-- Other module inherits -->
+	<inherits name="com.google.gwt.resources.Resources" />
+	<inherits name='com.google.web.bindery.requestfactory.RequestFactory' />
+	<inherits name="com.google.gwt.place.Place" />
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.inject.Inject" />
+	<inherits name="com.google.gwt.logging.Logging" />
+	
+	
+	<inherits name="org.hibernate.validator.HibernateValidator" />
+	<replace-with
+		class="pl.egalit.vocab.client.core.validation.SampleValidatorFactory">
+		<when-type-is class="javax.validation.ValidatorFactory" />
+	</replace-with>
+
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='com.google.gwt.i18n.client' />
+
+	<entry-point class="pl.egalit.vocab.client.MainVocab" />
+
+	<extend-property name="locale" values="en" />
+	<set-property-fallback name="locale" value="en" />
+
+</module>
