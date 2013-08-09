@@ -6,16 +6,16 @@
 	<ui:with field='res' type='pl.egalit.vocab.client.core.resources.MyRes' />
 	<ui:with field='texts' type='pl.egalit.vocab.client.core.resources.VocabConstants' />
 	
-	<g:VerticalPanel width="98%">
+	<g:VerticalPanel width="98%" height="100%">
 		<g:VerticalPanel horizontalAlignment="ALIGN_RIGHT"
 			styleName='{res.css.backtoapp}'>
 			<g:Hyperlink targetHistoryToken="StartPlace" text="{texts.backToMain}"></g:Hyperlink>
 		</g:VerticalPanel>
-		<g:VerticalPanel horizontalAlignment="ALIGN_LEFT"
+		<g:VerticalPanel horizontalAlignment="ALIGN_LEFT" height="100%"
 			styleName='{res.css.menu}'>
-			<g:Label styleName="{res.css.header}" text="{texts.listCourses}"></g:Label>
-			<c:CellTable ui:field="cellTable" width="100%" height="100%" styleName="{res.css.table}"></c:CellTable>
-
+			<g:Label styleName="{res.css.header}" text="{texts.listCourses}"></g:Label>			
+			<c:DataGrid ui:field="cellTable" styleName="{res.css.table}" width="100%" height="400px"></c:DataGrid>
+			
 			<g:Hyperlink targetHistoryToken="SettingsPlace:settings" text="{texts.backToSettings}"></g:Hyperlink>
 		</g:VerticalPanel>
 

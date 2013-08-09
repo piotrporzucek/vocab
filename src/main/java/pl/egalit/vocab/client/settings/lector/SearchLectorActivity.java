@@ -6,8 +6,8 @@ import pl.egalit.vocab.client.MyRequestFactory;
 import pl.egalit.vocab.client.core.dto.UserDto;
 import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
-import pl.egalit.vocab.client.entity.UserProxy;
 import pl.egalit.vocab.client.places.SearchLectorPlace;
+import pl.egalit.vocab.client.requestfactory.UserProxy;
 import pl.egalit.vocab.client.settings.lector.SearchLectorView.Presenter;
 
 import com.google.common.collect.Lists;

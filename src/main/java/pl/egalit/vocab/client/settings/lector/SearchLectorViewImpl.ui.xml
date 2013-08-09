@@ -16,7 +16,7 @@
 			styleName='{res.css.menu}'>
 			<g:Label styleName="{res.css.header}" text="{texts.chooseLectorToChange}"></g:Label>
 
-			<c:CellTable width="100%" ui:field="cellTable" styleName="{res.css.table}"></c:CellTable>
+			<c:DataGrid width="100%" height="400px" ui:field="cellTable" styleName="{res.css.table}"></c:DataGrid>
 			<g:Hyperlink targetHistoryToken="SettingsPlace:settings" text="{texts.backToSettings}"></g:Hyperlink>
 		</g:VerticalPanel>
 

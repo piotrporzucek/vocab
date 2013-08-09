@@ -14,46 +14,95 @@
  *******************************************************************************/
 package pl.egalit.vocab.server.entity;
 
+import java.util.Date;
+import java.util.logging.Logger;
 
-public class RegistrationInfo {
+import com.googlecode.objectify.annotation.Entity;
+import com.googlecode.objectify.annotation.Index;
 
-	String deviceId;
+/**
+ * Registration info.
+ * 
+ * An account may be associated with multiple phones, and a phone may be
+ * associated with multiple accounts.
+ * 
+ * registrations lists different phones registered to that account.
+ */
+@Entity
+public class RegistrationInfo extends DatastoreObject {
+	private static final Logger log = Logger.getLogger(RegistrationInfo.class
+			.getName());
 
-	String deviceRegistrationId;
+	/**
+	 * The ID used for sending messages to.
+	 */
 
-	String schoolId;
+	@Index
+	private String deviceRegistrationId;
+
+	/**
+	 * Current supported types: (default) - ac2dm, regular froyo+ devices using
+	 * C2DM protocol
+	 * 
+	 * New types may be defined - for example for sending to chrome.
+	 */
+
+	/**
+	 * For statistics - and to provide hints to the user.
+	 */
+
+	private Date registrationTimestamp;
+
+	@Index
+	private long schoolId;
 
 	public RegistrationInfo() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public String getDeviceId() {
-		return deviceId;
+	public RegistrationInfo(String deviceRegistrationId) {
+		log.info("new RegistrationInfo: deviceRegistrationId="
+				+ deviceRegistrationId);
+
+		this.deviceRegistrationId = deviceRegistrationId;
+		this.setRegistrationTimestamp(new Date()); // now
 	}
+
+	// Accessor methods for properties added later (hence can be null)
 
 	public String getDeviceRegistrationId() {
+		log.info("RegistrationInfo: return deviceRegistrationId="
+				+ deviceRegistrationId);
 		return deviceRegistrationId;
 	}
 
-	public void setDeviceId(String deviceId) {
-		this.deviceId = deviceId;
+	public void setDeviceRegistrationId(String deviceRegistrationId) {
+		log.info("RegistrationInfo: set deviceRegistrationId="
+				+ deviceRegistrationId);
+		this.deviceRegistrationId = deviceRegistrationId;
 	}
 
-	public void setDeviceRegistrationId(String deviceRegistrationId) {
-		this.deviceRegistrationId = deviceRegistrationId;
+	public void setRegistrationTimestamp(Date registrationTimestamp) {
+		this.registrationTimestamp = registrationTimestamp;
+	}
+
+	public Date getRegistrationTimestamp() {
+		return registrationTimestamp;
 	}
 
 	@Override
 	public String toString() {
-		return "RegistrationInfo [deviceId=" + deviceId
-				+ ", deviceRegistrationId=" + deviceRegistrationId + "]";
+		return "RegistrationInfo[id=" + id + ", deviceRegistrationId="
+				+ deviceRegistrationId + ", registrationTimestamp="
+				+ registrationTimestamp + "]";
 	}
 
-	public String getSchoolId() {
-		return schoolId;
-	}
-
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(long schoolId) {
 		this.schoolId = schoolId;
+	}
+
+	public long getSchoolId() {
+		return schoolId;
 	}
 
 }

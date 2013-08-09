@@ -6,8 +6,8 @@ import java.util.Set;
 
 import pl.egalit.vocab.client.core.resources.MyRes;
 import pl.egalit.vocab.client.core.resources.VocabConstants;
-import pl.egalit.vocab.client.entity.SchoolProxy;
 import pl.egalit.vocab.client.listCourses.ListCoursesView;
+import pl.egalit.vocab.client.requestfactory.SchoolProxy;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;

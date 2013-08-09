@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 import pl.egalit.vocab.client.core.mvp.VocabView;
-import pl.egalit.vocab.client.entity.SchoolProxy;
+import pl.egalit.vocab.client.requestfactory.SchoolProxy;
 
 import com.google.gwt.place.shared.Place;
 

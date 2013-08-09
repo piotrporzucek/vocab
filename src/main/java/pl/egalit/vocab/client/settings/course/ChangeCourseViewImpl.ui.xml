@@ -9,16 +9,15 @@
 	<g:VerticalPanel width="98%">
 		<g:VerticalPanel horizontalAlignment="ALIGN_RIGHT"
 			styleName='{res.css.backtoapp}'>
-			<g:Hyperlink targetHistoryToken="StartPlace">{texts.backToMain}</g:Hyperlink>
+			<g:Hyperlink targetHistoryToken="StartPlace" text="{texts.backToMain}"></g:Hyperlink>
 		</g:VerticalPanel>		
 			<g:VerticalPanel horizontalAlignment="ALIGN_LEFT"
 				styleName='{res.css.menu}'>
 				<g:Label ui:field="generalMessage" visible="false"></g:Label>
 				
-				<g:Label styleName="{res.css.header}" text="{texts.addLector}"></g:Label>
+				<g:Label styleName="{res.css.header}" text="{texts.changeCourse}"></g:Label>
 
-				<g:Label styleName="{res.css.header2}" text="{texts.accountData}"></g:Label>
-
+				
 				<g:Grid  styleName='{res.css.table}'>
 					<g:row styleName="optionalHeaderStyle">
 						<g:customCell styleName="optionalFooCellStyle">
@@ -29,6 +28,17 @@
 						</g:customCell>
 						<g:customCell styleName="{res.css.errorMessageStyle}">
 							<g:Label ui:field="nameMessage" visible="false"></g:Label>
+						</g:customCell>
+					</g:row>
+					<g:row styleName="optionalHeaderStyle">
+						<g:customCell styleName="optionalFooCellStyle">
+							<g:Label text="{texts.courseLanguage} *"></g:Label>
+						</g:customCell>
+						<g:customCell styleName="optionalBarCellStyle">
+							<g:ListBox ui:field="language"></g:ListBox>
+						</g:customCell>
+						<g:customCell styleName="{res.css.errorMessageStyle}">
+							<g:Label ui:field="languageMessage" visible="false"></g:Label>
 						</g:customCell>
 					</g:row>
 					<g:row styleName="optionalHeaderStyle">

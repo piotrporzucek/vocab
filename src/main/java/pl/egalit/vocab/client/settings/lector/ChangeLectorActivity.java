@@ -16,9 +16,9 @@ import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabPresenterValidationAware;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
 import pl.egalit.vocab.client.core.resources.VocabConstants;
-import pl.egalit.vocab.client.entity.CourseProxy;
-import pl.egalit.vocab.client.entity.UserProxy;
 import pl.egalit.vocab.client.places.SearchLectorPlace;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.UserProxy;
 import pl.egalit.vocab.client.settings.lector.ChangeLectorView.Presenter;
 
 import com.google.common.base.Function;

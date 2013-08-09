@@ -1,6 +1,6 @@
 package pl.egalit.vocab.client.courseDetails.model;
 
-import pl.egalit.vocab.client.entity.WordProxy;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
 
 public class WordDto {
 

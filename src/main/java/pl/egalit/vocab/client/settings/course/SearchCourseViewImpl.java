@@ -21,9 +21,9 @@ import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
+import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.TextColumn;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
@@ -33,7 +33,7 @@ import com.google.inject.Inject;
 public class SearchCourseViewImpl extends Composite implements SearchCourseView {
 
 	@UiField(provided = true)
-	CellTable<CourseDto> cellTable;
+	DataGrid<CourseDto> cellTable;
 
 	private MyRes myRes;
 
@@ -57,7 +57,7 @@ public class SearchCourseViewImpl extends Composite implements SearchCourseView 
 		this.myRes = myRes;
 		this.vocabConstants = vocabConstants;
 		myRes.css().ensureInjected();
-		cellTable = new CellTable<CourseDto>();
+		cellTable = new DataGrid<CourseDto>();
 		// Create name column.
 		nameColumn = new TextColumn<CourseDto>() {
 			@Override

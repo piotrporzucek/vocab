@@ -74,6 +74,7 @@ public class CourseServiceImpl extends AbstractService implements CourseService 
 		oldCourse.setEndDate(course.getEndDate());
 		oldCourse.setPassword(course.getPassword());
 		oldCourse.setLastUpdateTime(Calendar.getInstance().getTimeInMillis());
+		oldCourse.setLanguage(course.getLanguage());
 		oldCourse
 				.setSchool(schoolDao.findSchool(getVocabUser().getSchoolKey()));
 		courseDao.save(oldCourse);

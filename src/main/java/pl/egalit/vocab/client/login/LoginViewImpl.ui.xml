@@ -19,7 +19,7 @@
 
 	<g:VerticalPanel styleName="{style.panel}">
 		<g:HorizontalPanel>
-			<g:Label text="Vokabes" styleName="{style.label}"></g:Label>
+			<g:Image url="vokabes/icon.png"  width="300px" height="300px"/>
 
 			<my:LoginComposite ui:field="loginComposite" />
 		</g:HorizontalPanel>

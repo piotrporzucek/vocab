@@ -1,4 +1,4 @@
-package pl.egalit.vocab.client.entity;
+package pl.egalit.vocab.client.requestfactory;
 
 import java.util.Date;
 

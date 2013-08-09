@@ -16,6 +16,7 @@
 		<intercept-url pattern="/gwtRequest/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/index.html*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/admin/*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<intercept-url pattern="/task/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<logout logout-success-url="/" logout-url="/logout" />
 
 	</http>

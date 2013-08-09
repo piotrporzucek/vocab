@@ -1,4 +1,4 @@
-package pl.egalit.vocab.client.entity;
+package pl.egalit.vocab.client.requestfactory;
 
 import com.google.web.bindery.requestfactory.shared.EntityProxy;
 import com.google.web.bindery.requestfactory.shared.ProxyForName;

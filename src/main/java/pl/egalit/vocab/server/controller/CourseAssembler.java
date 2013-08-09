@@ -19,6 +19,8 @@ public class CourseAssembler {
 		dto.setEndDate(c.getEndDate());
 		dto.setPassword(c.getPassword());
 		dto.setActive(c.isActive());
+		dto.setSchoolId(c.getSchool().getKey().getId());
+		dto.setLanguage(c.getLanguage());
 		return dto;
 	}
 

@@ -3,8 +3,8 @@ package pl.egalit.vocab.client.core.dto;
 import java.util.HashSet;
 import java.util.Set;
 
-import pl.egalit.vocab.client.entity.CourseProxy;
-import pl.egalit.vocab.client.entity.UserProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.UserProxy;
 
 public class UserDto extends AbstractDto {
 	/**

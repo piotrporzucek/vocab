@@ -1,5 +1,7 @@
 package pl.egalit.vocab.server.controller;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,13 +47,15 @@ public class AdminController {
 
 	}
 
-	@RequestMapping(value = { "/add/school/{name}/{passwordAdmin}" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/add/school/{name}/{city}/{passwordAdmin}" }, method = RequestMethod.GET)
 	@ResponseBody
-	public long addSchool(@PathVariable String name,
+	public long addSchool(@PathVariable String name, @PathVariable String city,
 			@PathVariable String passwordAdmin) {
 		if (PASSWORD_ADMIN.equals(passwordAdmin)) {
 			School school = new School();
 			school.setName(name);
+			school.setCity(city);
+			school.setLastUpdateTime(Calendar.getInstance().getTimeInMillis());
 			return schoolDao.save(school).getId();
 
 		} else {

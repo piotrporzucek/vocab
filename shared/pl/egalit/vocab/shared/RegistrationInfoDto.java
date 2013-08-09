@@ -12,27 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package pl.egalit.vocab.client.request;
+package pl.egalit.vocab.shared;
 
-import com.google.web.bindery.requestfactory.shared.ProxyForName;
-import com.google.web.bindery.requestfactory.shared.ValueProxy;
+import java.io.Serializable;
 
-/**
- * A proxy object containing a message destined for a particular recipient,
- * identified by email address.
- */
-@ProxyForName(value = "pl.egalit.vocab.server.request.LoginRequest", locator = "pl.egalit.vocab.server.core.SimpleLocator")
-public interface LoginRequestProxy extends ValueProxy {
-	String getUsername();
+import org.codehaus.jackson.annotate.JsonAutoDetect;
 
-	void setUsername(String username);
+@JsonAutoDetect
+public class RegistrationInfoDto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-	String getPassword();
+	private String deviceRegistrationId;
+	private long schoolId;
 
-	void setPassword(String password);
+	public String getDeviceRegistrationId() {
+		return deviceRegistrationId;
+	}
 
-	void setSchoolId(Long schoolId);
+	public void setDeviceRegistrationId(String deviceRegistrationId) {
+		this.deviceRegistrationId = deviceRegistrationId;
+	}
 
-	Long getSchoolId();
+	public long getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(long schoolId) {
+		this.schoolId = schoolId;
+	}
 
 }

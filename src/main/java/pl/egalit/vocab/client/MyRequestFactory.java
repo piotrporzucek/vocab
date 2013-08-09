@@ -17,43 +17,19 @@ package pl.egalit.vocab.client;
 import java.util.List;
 import java.util.Set;
 
-import pl.egalit.vocab.client.entity.CourseProxy;
-import pl.egalit.vocab.client.entity.MessageProxy;
-import pl.egalit.vocab.client.entity.RegistrationInfoProxy;
-import pl.egalit.vocab.client.entity.SchoolProxy;
-import pl.egalit.vocab.client.entity.UserProxy;
-import pl.egalit.vocab.client.entity.WordProxy;
-import pl.egalit.vocab.client.entity.WordsUnitProxy;
-import pl.egalit.vocab.client.request.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.SchoolProxy;
+import pl.egalit.vocab.client.requestfactory.UserProxy;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
+import pl.egalit.vocab.client.requestfactory.WordsUnitProxy;
 
-import com.google.web.bindery.requestfactory.shared.InstanceRequest;
 import com.google.web.bindery.requestfactory.shared.Request;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import com.google.web.bindery.requestfactory.shared.ServiceName;
 
 public interface MyRequestFactory extends RequestFactory {
-
-	@ServiceName("pl.egalit.vocab.server.HelloWorldService")
-	public interface HelloWorldRequest extends RequestContext {
-		/**
-		 * Retrieve a "Hello, World" message from the server.
-		 */
-		Request<String> getMessage();
-	}
-
-	@ServiceName(value = "pl.egalit.vocab.server.service.impl.RegistrationInfoServiceImpl", locator = "pl.egalit.vocab.server.service.impl.RegistrationInfoServiceLocator")
-	public interface RegistrationInfoRequest extends RequestContext {
-		/**
-		 * Register a device for C2DM messages.
-		 */
-		Request<Void> register(RegistrationInfoProxy r);
-
-		/**
-		 * Unregister a device for C2DM messages.
-		 */
-		Request<Void> unregister(RegistrationInfoProxy r);
-	}
 
 	@ServiceName(value = "pl.egalit.vocab.server.service.impl.UserAuthentificationServiceImpl", locator = "pl.egalit.vocab.server.service.impl.UserAuthenticationServiceLocator")
 	public interface UserAuthentificationRequest extends RequestContext {
@@ -109,20 +85,6 @@ public interface MyRequestFactory extends RequestFactory {
 		Request<UserProxy> getCurrentUserFromCurrentSchool();
 
 	}
-
-	@ServiceName("pl.egalit.vocab.server.Message")
-	public interface MessageRequest extends RequestContext {
-		/**
-		 * Send a message to a device using C2DM.
-		 */
-		InstanceRequest<MessageProxy, String> send();
-	}
-
-	HelloWorldRequest helloWorldRequest();
-
-	RegistrationInfoRequest registrationInfoRequest();
-
-	MessageRequest messageRequest();
 
 	UserAuthentificationRequest authentificationRequest();
 

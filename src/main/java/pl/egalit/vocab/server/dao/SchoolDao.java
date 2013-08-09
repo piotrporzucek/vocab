@@ -10,8 +10,10 @@ import org.springframework.stereotype.Repository;
 import pl.egalit.vocab.server.entity.School;
 import pl.egalit.vocab.server.entity.UserEntity;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.googlecode.objectify.Key;
+import com.googlecode.objectify.NotFoundException;
 import com.googlecode.objectify.Ref;
 
 @Repository
@@ -33,6 +35,19 @@ public class SchoolDao extends ObjectifyGenericDao<School> {
 
 	public Ref<School> findSchool(Key<School> schoolKey) {
 		return ofy().load().key(schoolKey);
+	}
+
+	public List<School> getSchools(long lastUpdateTime) {
+		List<School> result = Lists.newArrayList();
+		try {
+			result.addAll(ofy().load().type(School.class)
+					.filter("lastUpdateTime >=", lastUpdateTime).list());
+		} catch (NotFoundException e) {
+
+		}
+
+		return result;
+
 	}
 
 }

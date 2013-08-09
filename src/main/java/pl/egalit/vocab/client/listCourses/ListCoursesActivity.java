@@ -19,7 +19,7 @@ import java.util.List;
 import pl.egalit.vocab.client.MyRequestFactory;
 import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
-import pl.egalit.vocab.client.entity.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;

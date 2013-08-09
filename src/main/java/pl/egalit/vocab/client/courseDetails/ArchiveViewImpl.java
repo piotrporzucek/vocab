@@ -3,9 +3,9 @@ package pl.egalit.vocab.client.courseDetails;
 import java.util.List;
 
 import pl.egalit.vocab.client.courseDetails.CourseDetailsView.Presenter;
-import pl.egalit.vocab.client.entity.WordProxy;
-import pl.egalit.vocab.client.entity.WordsUnitProxy;
 import pl.egalit.vocab.client.places.CoursePlace.TabPlace;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
+import pl.egalit.vocab.client.requestfactory.WordsUnitProxy;
 
 import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;

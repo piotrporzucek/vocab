@@ -52,6 +52,8 @@ public interface VocabConstants extends Messages {
 
 	String addLector();
 
+	String changeCourse();
+
 	String archive();
 
 	String courses();
@@ -139,4 +141,6 @@ public interface VocabConstants extends Messages {
 	String period();
 
 	String wordSendingError();
+
+	String courseLanguage();
 }

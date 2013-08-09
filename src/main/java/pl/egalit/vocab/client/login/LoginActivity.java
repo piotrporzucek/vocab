@@ -25,10 +25,10 @@ import pl.egalit.vocab.client.MyRequestFactory.UserAuthentificationRequest;
 import pl.egalit.vocab.client.core.exceptions.RegisteredInManySchoolsException;
 import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
-import pl.egalit.vocab.client.entity.SchoolProxy;
 import pl.egalit.vocab.client.listCourses.ListCoursesView;
 import pl.egalit.vocab.client.places.StartPlace;
-import pl.egalit.vocab.client.request.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.SchoolProxy;
 
 import com.google.common.collect.Lists;
 import com.google.gwt.event.shared.EventBus;

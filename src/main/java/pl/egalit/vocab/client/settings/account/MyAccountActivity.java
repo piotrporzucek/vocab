@@ -12,9 +12,9 @@ import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabPresenterValidationAware;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
 import pl.egalit.vocab.client.core.resources.VocabConstants;
-import pl.egalit.vocab.client.entity.UserProxy;
 import pl.egalit.vocab.client.places.SearchLectorPlace;
 import pl.egalit.vocab.client.places.SettingsPlace;
+import pl.egalit.vocab.client.requestfactory.UserProxy;
 import pl.egalit.vocab.client.settings.account.MyAccountView.Presenter;
 
 import com.google.common.base.Objects;

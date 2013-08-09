@@ -17,7 +17,7 @@ package pl.egalit.vocab.client.listCourses;
 import java.util.List;
 
 import pl.egalit.vocab.client.core.mvp.VocabView;
-import pl.egalit.vocab.client.entity.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 
 import com.google.gwt.place.shared.Place;
 
@@ -42,14 +42,13 @@ public interface ListCoursesView extends VocabView {
 		void loadArchiveCourses();
 
 		Long getChosenCourseId();
-		
 
 	}
 
 	void setArchiveCourses(List<CourseProxy> response);
 
 	void setActiveCourses(List<CourseProxy> response);
-	
+
 	boolean isInitialized();
 
 	void setChosenCourseId(Long chosenCourseId);

@@ -12,20 +12,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package pl.egalit.vocab.client.entity;
+package pl.egalit.vocab.client.requestfactory;
 
+import java.util.List;
+
+import com.google.web.bindery.requestfactory.shared.EntityProxy;
 import com.google.web.bindery.requestfactory.shared.ProxyForName;
-import com.google.web.bindery.requestfactory.shared.ValueProxy;
 
 /**
- * A proxy object containing a message destined for a particular
- * recipient, identified by email address.
+ * A proxy object containing device registration information: email account
+ * name, device id, and device registration id.
  */
-@ProxyForName(value = "pl.egalit.vocab.server.Message",
-    locator = "pl.egalit.vocab.server.MessageLocator")
-public interface MessageProxy extends ValueProxy {
-  String getMessage();
-  String getRecipient();
-  void setRecipient(String recipient);
-  void setMessage(String message);
+@ProxyForName(value = "pl.egalit.vocab.server.entity.UserEntity", locator = "pl.egalit.vocab.server.core.ObjectifyLocator")
+public interface UserProxy extends EntityProxy {
+	Long getId();
+
+	Integer getVersion();
+
+	Long getSchoolId();
+
+	void setEmail(String email);
+
+	String getEmail();
+
+	void setPassword(String password);
+
+	String getPassword();
+
+	void setName(String name);
+
+	String getName();
+
+	boolean isAdmin();
+
+	List<CourseProxy> getCourseEntities();
+
+	void setCourseEntities(List<CourseProxy> courses);
+
+	void setId(Long id);
+
 }

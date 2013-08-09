@@ -12,6 +12,8 @@ public class CourseDto implements Serializable {
 
 	public static final String NAME_PROPERTY = "name";
 	public static final String CHOSEN_PROPERTY = "chosen";
+
+	public static final String LANGUAGE_PROPERTY = "language";
 	private Long id;
 	private String name;
 	private boolean chosen;
@@ -20,6 +22,8 @@ public class CourseDto implements Serializable {
 	private Date startDate;
 	private Date endDate;
 	private String password;
+	private String language;
+	private Long schoolId;
 
 	private boolean initialized;
 
@@ -28,11 +32,12 @@ public class CourseDto implements Serializable {
 	}
 
 	public CourseDto(long courseId, String courseName, String password,
-			boolean initialized) {
+			boolean initialized, String language) {
 		this.id = courseId;
 		this.name = courseName;
 		this.password = password;
 		this.initialized = initialized;
+		this.language = language;
 	}
 
 	public Long getId() {
@@ -114,6 +119,22 @@ public class CourseDto implements Serializable {
 	@Override
 	public String toString() {
 		return name != null ? name : "null" + " [" + id + "]";
+	}
+
+	public Long getSchoolId() {
+		return schoolId;
+	}
+
+	public void setSchoolId(Long schoolId) {
+		this.schoolId = schoolId;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 }

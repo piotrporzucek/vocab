@@ -13,11 +13,11 @@ import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
 import pl.egalit.vocab.client.core.resources.VocabConstants;
 import pl.egalit.vocab.client.courseDetails.model.WordDto;
-import pl.egalit.vocab.client.entity.CourseProxy;
-import pl.egalit.vocab.client.entity.WordProxy;
-import pl.egalit.vocab.client.entity.WordsUnitProxy;
 import pl.egalit.vocab.client.places.CoursePlace;
 import pl.egalit.vocab.client.places.CoursePlace.TabPlace;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
+import pl.egalit.vocab.client.requestfactory.WordsUnitProxy;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;

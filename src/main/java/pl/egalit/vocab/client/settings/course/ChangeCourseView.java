@@ -43,4 +43,6 @@ public interface ChangeCourseView extends VocabView {
 
 	void setErrorEndDate(String message);
 
+	void setErrorLanguage(String language);
+
 }

@@ -2,8 +2,8 @@ package pl.egalit.vocab.client.core.validation;
 
 import javax.validation.Validator;
 
-import pl.egalit.vocab.client.entity.WordProxy;
-import pl.egalit.vocab.client.request.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.LoginRequestProxy;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.validation.client.AbstractGwtValidatorFactory;

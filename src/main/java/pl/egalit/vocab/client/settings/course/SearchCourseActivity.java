@@ -6,7 +6,7 @@ import pl.egalit.vocab.client.MyRequestFactory;
 import pl.egalit.vocab.client.core.dto.CourseDto;
 import pl.egalit.vocab.client.core.mvp.AbstractVocabActivity;
 import pl.egalit.vocab.client.core.mvp.VocabReceiver;
-import pl.egalit.vocab.client.entity.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 import pl.egalit.vocab.client.settings.course.SearchCourseView.Presenter;
 
 import com.google.common.collect.Lists;

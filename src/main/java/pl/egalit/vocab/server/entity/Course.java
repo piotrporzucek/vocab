@@ -43,6 +43,9 @@ public class Course extends DatastoreObject {
 	@Index
 	private boolean active;
 
+	@NotNull(message = "{Course.language.empty}")
+	private String language;
+
 	@NotNull(message = "{Course.password.empty}")
 	private String password;
 
@@ -134,6 +137,14 @@ public class Course extends DatastoreObject {
 
 	public long getLastUpdateTime() {
 		return lastUpdateTime;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 }

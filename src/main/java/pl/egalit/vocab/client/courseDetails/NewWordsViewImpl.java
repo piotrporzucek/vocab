@@ -5,8 +5,8 @@ import pl.egalit.vocab.client.core.widget.BrowserEventObserver;
 import pl.egalit.vocab.client.core.widget.VocabTextInputCell;
 import pl.egalit.vocab.client.courseDetails.CourseDetailsView.Presenter;
 import pl.egalit.vocab.client.courseDetails.model.WordDto;
-import pl.egalit.vocab.client.entity.WordProxy;
 import pl.egalit.vocab.client.places.CoursePlace.TabPlace;
+import pl.egalit.vocab.client.requestfactory.WordProxy;
 
 import com.google.common.base.Objects;
 import com.google.common.base.Strings;

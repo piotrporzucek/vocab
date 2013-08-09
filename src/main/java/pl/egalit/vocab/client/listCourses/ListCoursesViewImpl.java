@@ -16,7 +16,7 @@ package pl.egalit.vocab.client.listCourses;
 
 import java.util.List;
 
-import pl.egalit.vocab.client.entity.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

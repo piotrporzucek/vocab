@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-package pl.egalit.vocab.client.entity;
+package pl.egalit.vocab.client.requestfactory;
 
 import java.util.Date;
 
@@ -54,5 +54,9 @@ public interface CourseProxy extends EntityProxy {
 	void setPassword(String password);
 
 	void setDescription(String description);
+
+	void setLanguage(String language);
+
+	String getLanguage();
 
 }

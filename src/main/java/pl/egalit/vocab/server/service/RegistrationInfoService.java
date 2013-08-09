@@ -7,4 +7,8 @@ public interface RegistrationInfoService {
 
 	public void unregister(RegistrationInfo registrationInfo);
 
+	public void unregister(String regId);
+
+	public void updateRegistrationId(String regId, String canonicalRegId);
+
 }

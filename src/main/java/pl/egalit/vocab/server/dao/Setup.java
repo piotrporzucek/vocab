@@ -2,11 +2,13 @@ package pl.egalit.vocab.server.dao;
 
 import java.util.Calendar;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import pl.egalit.vocab.server.entity.Course;
 import pl.egalit.vocab.server.entity.School;
@@ -15,6 +17,7 @@ import pl.egalit.vocab.server.entity.UserEntity;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 
+@Component
 public class Setup {
 
 	@Autowired
@@ -40,12 +43,14 @@ public class Setup {
 	public void initLoad() {
 		School school1 = new School();
 		school1.setName("OEI Wroclaw");
+		school1.setCity("Wroclaw");
 		school1.setId(1l);
 		Key<School> schoolKey1 = schoolDao.save(school1);
 
 		School school2 = new School();
 		school2.setName("Cosmopolitan Opole");
 		school2.setId(2l);
+		school2.setCity("Wroclaw");
 		Key<School> schoolKey2 = schoolDao.save(school2);
 
 		UserEntity userEntity1 = new UserEntity();
@@ -104,6 +109,12 @@ public class Setup {
 			startDate.add(Calendar.MONTH, -10);
 			course.setActive(false);
 			endDate.add(Calendar.MONTH, -6);
+		}
+
+		if (i % 3 == 0) {
+			course.setLanguage(Locale.ENGLISH.getLanguage());
+		} else {
+			course.setLanguage(Locale.GERMAN.getLanguage());
 		}
 		course.setEndDate(endDate.getTime());
 		course.setStartDate(startDate.getTime());

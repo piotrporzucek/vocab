@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import pl.egalit.vocab.client.core.mvp.VocabPlaceHistoryMapper;
-import pl.egalit.vocab.client.entity.CourseProxy;
 import pl.egalit.vocab.client.places.CoursePlace;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 
 import com.google.common.collect.TreeMultimap;
 import com.google.common.primitives.Ints;

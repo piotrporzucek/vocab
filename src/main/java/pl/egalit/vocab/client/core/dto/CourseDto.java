@@ -2,7 +2,7 @@ package pl.egalit.vocab.client.core.dto;
 
 import java.util.Date;
 
-import pl.egalit.vocab.client.entity.CourseProxy;
+import pl.egalit.vocab.client.requestfactory.CourseProxy;
 
 public class CourseDto extends AbstractDto {
 	private static final long serialVersionUID = 1L;
@@ -18,6 +18,8 @@ public class CourseDto extends AbstractDto {
 	private String password;
 
 	private String description;
+
+	private String language;
 
 	public void setName(String name) {
 		this.name = name;
@@ -36,6 +38,7 @@ public class CourseDto extends AbstractDto {
 		dto.setActive(input.isActive());
 		dto.setPassword(input.getPassword());
 		dto.setDescription(input.getDescription());
+		dto.setLanguage(input.getLanguage());
 		return dto;
 	}
 
@@ -78,6 +81,14 @@ public class CourseDto extends AbstractDto {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 }

@@ -12,8 +12,8 @@
 	<properties>
 		<appengine.app.version>1</appengine.app.version>
 		<gwt.version>2.5.1</gwt.version>
-		<gae.version>1.8.0</gae.version>
-		<appengine.target.version>1.8.0</appengine.target.version>
+		<gae.version>1.8.2</gae.version>
+		<appengine.target.version>1.8.2</appengine.target.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.security.version>3.1.3.RELEASE</spring.security.version>
 		<spring.version>3.1.3.RELEASE</spring.version>
@@ -161,14 +161,14 @@
 			<version>1.9.11 </version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.guava </groupId>
+			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>14.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava-gwt</artifactId>
-			<version>14.0.1 </version>
+			<version>14.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security </groupId>
@@ -231,15 +231,22 @@
 		<plugins>
 			<plugin>
 				<groupId> org.codehaus.mojo </groupId>
-				<artifactId> gwt-maven-plugin </artifactId>
+				<artifactId>gwt-maven-plugin</artifactId>
 				<version>2.5.1</version>
 				<executions>
 					<execution>
+
 						<goals>
 							<goal>compile</goal>
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<runTarget>index.html</runTarget>
+					<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
+					<appEngineHome>C:\tools\eclipse\plugins\com.google.appengine.eclipse.sdkbundle_1.8.2\appengine-java-sdk-1.8.2</appEngineHome>
+				</configuration>
+
 				<!-- configuration> <configuration> <runTarget>index.html</runTarget> 
 					<hostedWebapp>${webappDirectory}</hostedWebapp> <appEngineVersion>${gae.version}</appEngineVersion> 
 					<server> com.google.appengine.tools.development.gwt.AppEngineLauncher </server> 
@@ -262,7 +269,7 @@
 								<source>shared</source>
 								<source>src/main/resources</source>
 							</sources>
-							
+
 						</configuration>
 					</execution>
 				</executions>
@@ -312,6 +319,7 @@
 					<unpackVersion>${gae.version}</unpackVersion>
 				</configuration>
 			</plugin>
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
